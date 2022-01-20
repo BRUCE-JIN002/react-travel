@@ -16,9 +16,8 @@ import { withTranslation, WithTranslation } from "react-i18next";
 import axios from "axios";
 import { connect } from "react-redux";
 import { RootState } from "../../redux/store";
-import{ 
-  giveMeDataActionCreator
-} from "../../redux/recommendProducts/recommendProductsActions"; 
+import{ giveMeDataActionCreator } from "../../redux/recommendProducts/recommendProductsActions"; 
+import { MainLayout } from "../../layouts/mainlayout";
 
  
 const mapStateToProps = (state: RootState) => {
@@ -70,8 +69,7 @@ componentDidMount() {
 
     return (
       <>
-        <Header />
-        {/* 页面内容 content */}
+      <MainLayout>
         <div className={styles["page-content"]}>
           <Row style={{ marginTop: 20 }}>
             <Col span={6}>
@@ -110,7 +108,7 @@ componentDidMount() {
           />
           <BusinessPartners />
         </div>
-        <Footer />
+      </MainLayout>
       </>
     );
   }
